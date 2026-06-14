@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import io
 import sys
+import os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 from shared_functions import *
@@ -18,7 +19,10 @@ def main():
         print("Loading food database...")
 
         global food_items
-        food_items = load_food_data('./FoodDataSet.json')
+        # Get the directory where this script is located
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        data_file = os.path.join(script_dir, 'FoodDataSet.json')
+        food_items = load_food_data(data_file)
 
         collection = create_similarity_search_collection(
             "interactive_food_search",
