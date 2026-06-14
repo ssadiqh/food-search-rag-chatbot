@@ -1,0 +1,14 @@
+# Food Search RAG Chatbot Requirements
+
+# Vector Database
+chromadb==1.0.12
+
+# Embeddings
+sentence-transformers>=2.2.0
+
+# Core
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Optional: RAG with IBM WatsonX (commented out)
+# ibm-watsonx-ai>=1.3.24
